@@ -20,18 +20,81 @@
       "target": "_blank"
     },
     {
-      "url": "/auth/login-basic",
-      "name": "Login",
-      "icon": "menu-icon tf-icons bx bx-log-in",
-      "slug": "auth-login-basic",
-      "target": "_blank"
-    },
-    {
-      "url": "/auth/register-basic",
-      "name": "Register",
-      "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "auth-register-basic",
-      "target": "_blank"
+      "name": "Masters",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "master",
+      "badge": [
+        "primary",
+        "3"
+      ],
+      "submenu": [
+        {
+          "url": "/companies",
+          "name": "Companies",
+          "icon": "menu-icon tf-icons bx bx-building",
+          "slug": "master-company"
+        },
+        {
+          "url": "/locations",
+          "name": "Locations",
+          "icon": "menu-icon tf-icons bx bx-map",
+          "slug": "master-location"
+        },
+        {
+          "url": "/facilities",
+          "name": "Facilities",
+          "icon": "menu-icon tf-icons bx bx-building-house",
+          "slug": "master-facility"
+        },
+        {
+          "url": "/departments",
+          "name": "Departments",
+          "icon": "menu-icon tf-icons bx bx-building",
+          "slug": "master-department"
+        },
+        {
+          "url": "/equipment-types",
+          "name": "Equipment Types",
+          "icon": "menu-icon tf-icons bx bx-package",
+          "slug": "master-equipment-type"
+        },
+        {
+          "url": "/equipments",
+          "name": "Equipments",
+          "icon": "menu-icon tf-icons bx bx-package",
+          "slug": "master-equipment"
+        },
+        {
+          "url": "/instrument-types",
+          "name": "Instrument Types",
+          "icon": "menu-icon tf-icons bx bx-microchip",
+          "slug": "master-instrument-type"
+        },
+        {
+          "url": "/instruments",
+          "name": "Instruments",
+          "icon": "menu-icon tf-icons bx bx-microchip",
+          "slug": "master-instrument"
+        },
+        {
+          "url": "/it-asset-types",
+          "name": "IT Asset Types",
+          "icon": "menu-icon tf-icons bx bx-laptop",
+          "slug": "master-it-asset-type"
+        },
+        {
+          "url": "/it-assets",
+          "name": "IT Assets",
+          "icon": "menu-icon tf-icons bx bx-laptop",
+          "slug": "master-it-asset"
+        },
+        {
+          "url": "/applications",
+          "name": "Applications",
+          "icon": "menu-icon tf-icons bx bx-cube",
+          "slug": "master-application"
+        }
+      ]
     }
   ]
 }

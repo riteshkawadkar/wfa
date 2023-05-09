@@ -20,18 +20,92 @@
       "target": "_blank"
     },
     {
-      "url": "/auth/login-basic",
-      "name": "Login",
-      "icon": "menu-icon tf-icons bx bx-log-in",
-      "slug": "auth-login-basic",
-      "target": "_blank"
-    },
-    {
-      "url": "/auth/register-basic",
-      "name": "Register",
-      "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "auth-register-basic",
-      "target": "_blank"
+      "name": "Masters",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "master",
+      "badge": [
+        "primary",
+        "3"
+      ],
+      "submenu": [
+        {
+          "url": "/company",
+          "name": "Company",
+          "icon": "menu-icon tf-icons bx bx-building",
+          "slug": "master-company",
+          "target": "_blank"
+        },
+        {
+          "url": "/location",
+          "name": "Location",
+          "icon": "menu-icon tf-icons bx bx-map",
+          "slug": "master-location",
+          "target": "_blank"
+        },
+        {
+          "url": "/facility",
+          "name": "Facility",
+          "icon": "menu-icon tf-icons bx bx-building-house",
+          "slug": "master-facility",
+          "target": "_blank"
+        },
+        {
+          "url": "/department",
+          "name": "Department",
+          "icon": "menu-icon tf-icons bx bx-building",
+          "slug": "master-department",
+          "target": "_blank"
+        },
+        {
+          "url": "/equipment-type",
+          "name": "Equipment Type",
+          "icon": "menu-icon tf-icons bx bx-package",
+          "slug": "master-equipment-type",
+          "target": "_blank"
+        },
+        {
+          "url": "/equipment",
+          "name": "Equipment",
+          "icon": "menu-icon tf-icons bx bx-package",
+          "slug": "master-equipment",
+          "target": "_blank"
+        },
+        {
+          "url": "/instrument-type",
+          "name": "Instrument Type",
+          "icon": "menu-icon tf-icons bx bx-microchip",
+          "slug": "master-instrument-type",
+          "target": "_blank"
+        },
+        {
+          "url": "/instrument",
+          "name": "Instrument",
+          "icon": "menu-icon tf-icons bx bx-microchip",
+          "slug": "master-instrument",
+          "target": "_blank"
+        },
+        {
+          "url": "/it-asset-type",
+          "name": "IT Asset Type",
+          "icon": "menu-icon tf-icons bx bx-laptop",
+          "slug": "master-it-asset-type",
+          "target": "_blank"
+        },
+        {
+          "url": "/it-asset",
+          "name": "IT Asset",
+          "icon": "menu-icon tf-icons bx bx-laptop",
+          "slug": "master-it-asset",
+          "target": "_blank"
+        },
+        {
+          "url": "/application",
+          "name": "Application",
+          "icon": "menu-icon tf-icons bx bx-cube",
+          "slug": "master-application",
+          "target": "_blank"
+        }
+      ]
     }
   ]
 }
