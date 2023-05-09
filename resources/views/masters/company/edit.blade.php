@@ -47,99 +47,19 @@
         @method('PUT')
         <div class="row">
           <input type="hidden" name="id", value="{{$company->id}}">
-          <div class="mb-3 col-md-6">
-            <label for="name" class="form-label">Company Name</label>
-            <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ $company->name }}" autofocus required/>
-            @error('name')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="shortName" class="form-label">Short Name</label>
-            <input class="form-control @error('short_name') is-invalid @enderror" type="text" name="short_name" id="short_name" value="{{ $company->short_name }}" required/>
-            @error('short_name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="email" class="form-label">E-mail</label>
-            <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value="{{ $company->email }}" placeholder="john.doe@example.com" />
-            @error('email')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="domain" class="form-label">Domain</label>
-            <input type="text" class="form-control @error('domain') is-invalid @enderror" id="domain" name="domain" value="{{ $company->domain }}" placeholder="example.com" />
-            @error('domain')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="company_url" class="form-label">Company URL</label>
-            <input type="text" class="form-control @error('company_url') is-invalid @enderror" id="company_url" name="company_url" value="{{ $company->company_url }}" placeholder="www.example.com" />
-            @error('company_url')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label class="form-label" for="phone_number">Phone Number</label>
-              <input type="text" id="phone_number" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" value="{{ $company->phone_number }}"/>
-              @error('phone_number')
-              <div class="invalid-feedback">{{ $message }}</div>
-              @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" placeholder="Address" value="{{ $company->address }}"/>
-            @error('address')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="pune" value="{{ $company->city }}"/>
-            @error('city')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="state" class="form-label">State</label>
-            <input class="form-control @error('state') is-invalid @enderror" type="text" id="state" name="state" placeholder="California" value="{{ $company->state }}"/>
-            @error('state')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="zip_code" class="form-label">Zip Code</label>
-            <input type="text" class="form-control @error('zip_code') is-invalid @enderror" id="zip_code" name="zip_code" placeholder="231465" maxlength="6" value="{{ $company->zip_code }}"/>
-            @error('zip_code')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="country" class="form-label">Country</label>
-            <input type="text" class="form-control @error('country') is-invalid @enderror" id="country" name="country"  value="{{ $company->country }}"/>
-            @error('country')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="gstin" class="form-label @error('gstin') is-invalid @enderror">GSTIN</label>
-            <input type="text" class="form-control" id="gstin" name="gstin" placeholder="ZAKEPK4545K1ZM" maxlength="14" value="{{ $company->gstin }}"/>
-            @error('gstin')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="mb-3 col-md-6">
-            <label for="pan" class="form-label @error('pan') is-invalid @enderror">PAN Number</label>
-            <input type="text" class="form-control" id="pan" name="pan" placeholder="AKEPK4545K" maxlength="10" value="{{ $company->pan }}"/>
-            @error('pan')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
+          <x-company-input-field label="Company Name" name="name" value="{{ $company->name }}" placeholder="Company Name" required autofocus />
+          <x-company-input-field label="Short Name" name="short_name" value="{{ $company->short_name }}" placeholder="Short Name" required />
+          <x-company-input-field label="Email" name="email" value="{{ $company->email }}" placeholder="john.doe@example.com" required />
+          <x-company-input-field label="Domain Name" name="domain" value="{{ $company->domain }}" placeholder="example.com" required />
+          <x-company-input-field label="Company URL" name="company_url" value="{{ $company->company_url }}" placeholder="https://origamiitlab.com/" required />
+          <x-company-input-field label="Phone Number" name="phone_number" value="{{ $company->phone_number }}" placeholder="202 555 0111" />
+          <x-company-input-field label="Address" name="address" value="{{ $company->address }}" required />
+          <x-company-input-field label="City" name="city" value="{{ $company->city }}" />
+          <x-company-input-field label="State" name="state" value="{{ $company->state }}" />
+          <x-company-input-field label="Zip Code" name="zip_code" value="{{ $company->zip_code }}" required />
+          <x-company-input-field label="Country" name="country" value="{{ $company->country }}" required />
+          <x-company-input-field label="GSTIN" name="gstin" value="{{ $company->gstin }}" placeholder="ZAKEPK4545K1ZM" maxlength="14" />
+          <x-company-input-field label="PAN" name="pan" value="{{ $company->pan }}" placeholder="AKEPK4545K" maxlength="10" />
         </div>
         <div class="mt-2">
           <button type="submit" class="btn btn-primary me-2">Save changes</button>

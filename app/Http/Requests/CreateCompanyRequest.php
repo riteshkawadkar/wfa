@@ -57,6 +57,7 @@ class CreateCompanyRequest extends FormRequest
       'domain.required' => 'The company domain is required.',
       'domain.not_starts_with' => 'The :attribute must not start with "http".',
       'domain.regex' => 'The :attribute must be a valid domain name like "example.com".',
+      'company_url.url' => 'The :attribute must be a valid domain name like "www.example.com".',
       'companyLogo.image' => 'The company logo must be an image',
       'companyLogo.max' => 'The company logo may not be greater than :max kilobytes.',
       'phone_number.max' => 'The phone number may not be greater than 10 digits.',
