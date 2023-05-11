@@ -1,5 +1,16 @@
 <?php
 
+use App\Http\Controllers\masters\ApplicationController;
+use App\Http\Controllers\masters\CompanyController;
+use App\Http\Controllers\masters\DepartmentController;
+use App\Http\Controllers\masters\EquipmentController;
+use App\Http\Controllers\masters\EquipmentTypeController;
+use App\Http\Controllers\masters\FacilityController;
+use App\Http\Controllers\masters\InstrumentController;
+use App\Http\Controllers\masters\InstrumentTypeController;
+use App\Http\Controllers\masters\ItAssetController;
+use App\Http\Controllers\masters\ItAssetTypeController;
+use App\Http\Controllers\masters\LocationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +33,15 @@ Route::get('/page-2', $controller_path . '\pages\Page2@index')->name('pages-page
 // pages
 Route::get('/pages/misc-error', $controller_path . '\pages\MiscError@index')->name('pages-misc-error');
 
-// authentication
-Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');
-Route::get('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@index')->name('auth-register-basic');
+// Master
+Route::resource('companies', CompanyController::class);
+Route::resource('locations', LocationController::class);
+Route::resource('departments', DepartmentController::class);
+Route::resource('facilities', FacilityController::class);
+Route::resource('equipment-types', EquipmentTypeController::class);
+Route::resource('equipments', EquipmentController::class);
+Route::resource('instrument-types', InstrumentTypeController::class);
+Route::resource('instruments', InstrumentController::class);
+Route::resource('it-asset-types', ItAssetTypeController::class);
+Route::resource('it-assets', ItAssetController::class);
+Route::resource('applications', ApplicationController::class);
