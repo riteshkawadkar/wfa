@@ -53,7 +53,7 @@ class CompanyController extends Controller
         $filename = $request->short_name.'.'.$image->getClientOriginalExtension();
         $path = public_path('assets/img/logo/'.$filename);
         Image::make($image->getRealPath())->resize(200, 200)->save($path); // Resize the image to 200x200 pixels
-        $data['company_logo'] = 'img/logo/'.$filename;
+        $data['company_logo'] = '/img/logo/'.$filename;
       }
 
       // create a new company using the validated data
@@ -105,7 +105,7 @@ class CompanyController extends Controller
         $filename = $request->short_name.'.'.$image->getClientOriginalExtension();
         $path = public_path('assets/img/logo/'.$filename);
         Image::make($image->getRealPath())->resize(200, 200)->save($path); // Resize the image to 200x200 pixels
-        $data['company_logo'] = 'img/logo/'.$filename;
+        $data['company_logo'] = '/img/logo/'.$filename;
       }
 
       // update a new company using the validated data
