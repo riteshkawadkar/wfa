@@ -9,6 +9,7 @@ use App\Models\masters\Company;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CompanyController extends Controller
 {
@@ -45,6 +46,15 @@ class CompanyController extends Controller
     public function store(CreateCompanyRequest  $request)
     {
       $data = $request->validated();
+
+      // Save the logo
+      if ($request->has('company_logo')) {
+        $image = $request->file('company_logo');
+        $filename = $request->short_name.'.'.$image->getClientOriginalExtension();
+        $path = public_path('assets/img/logo/'.$filename);
+        Image::make($image->getRealPath())->resize(200, 200)->save($path); // Resize the image to 200x200 pixels
+        $data['company_logo'] = 'img/logo/'.$filename;
+      }
 
       // create a new company using the validated data
       $company = Company::create($data);
@@ -89,7 +99,14 @@ class CompanyController extends Controller
     {
       $data = $request->validated();
 
-      Debugbar::debug($data);
+      // Save the logo
+      if ($request->has('company_logo')) {
+        $image = $request->file('company_logo');
+        $filename = $request->short_name.'.'.$image->getClientOriginalExtension();
+        $path = public_path('assets/img/logo/'.$filename);
+        Image::make($image->getRealPath())->resize(200, 200)->save($path); // Resize the image to 200x200 pixels
+        $data['company_logo'] = 'img/logo/'.$filename;
+      }
 
       // update a new company using the validated data
       $company->update($data);
